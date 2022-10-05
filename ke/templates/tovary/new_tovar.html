@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+<html lang="ru"> <!-- Язык сайта - русский -->
+<head>
+
+    <title>Анализ продаж</title>
+</head>
+<body>
+<main>
+    <!-- класс py-5 создает отступы сверху и снизу блока -->
+    <div class="container py-5">
+        <h1> выводим продажи </h1>
+
+
+        <form method="post"
+
+              action="{% url 'tovary_url:new_tovar' %}">
+
+
+              {% csrf_token %}
+
+        <div class="form-group row my-3 p-3">
+
+            <label for="id_text">
+                Заведение товара
+                <span class="required text-danger">*</span>
+            </label>
+            {{ form.as_p }}
+
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">
+                Сохранить
+            </button>
+        </div>
+        </form>
+
+
+</main>
+</body>
+
+
+{% endblock %}j

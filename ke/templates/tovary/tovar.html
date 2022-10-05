@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+<html lang="ru"> <!-- Язык сайта - русский -->
+<head>
+
+    <title>Анализ продаж</title>
+</head>
+<body>
+<main>
+    <!-- класс py-5 создает отступы сверху и снизу блока -->
+    <div class="container py-5">
+        <h1> выводим продажи </h1>
+
+        <ul>
+            <li>Название столбца 1</li>
+            {% for tovar in tovary %}
+
+            <li>
+                Товар:{{tovar.name}}
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</main>
+</body>
+
+
+{% endblock %}

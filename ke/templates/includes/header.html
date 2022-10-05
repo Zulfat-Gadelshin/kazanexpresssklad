@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Аналитика товаров</title>
+</head>
+<header>
+    {% load static %}
+    <nav class="navbar navbar-light" style="background-color: lightskyblue">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'user_url:index' %}">
+                 <img src="{% static 'img/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                <span style="color:red">Топ продаж</span>
+            </a>
+        </div>
+    </nav>
+</header>
