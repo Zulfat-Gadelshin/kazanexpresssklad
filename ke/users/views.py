@@ -3,6 +3,7 @@ from django.views.generic import CreateView
 from django.urls import reverse_lazy
 from .forms import CreationForm
 from django.http import HttpResponse
+from tovar.models import Tovar
 
 
 class SignUp(CreateView):
@@ -14,5 +15,7 @@ class SignUp(CreateView):
 
 def index(request):
     template = 'vizual/index.html'
+    tovary = Tovar.objects.all()
 
-    return render(request,template)
+    return render(request,template, {'tovary': tovary})
+

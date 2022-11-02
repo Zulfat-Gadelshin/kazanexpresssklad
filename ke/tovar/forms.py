@@ -7,7 +7,8 @@ class TovarForm(forms.ModelForm):
     class Meta:
         model = Tovar
 
-        fields = ('tovar_link', 'name', 'chaina_link', 'opponents_link', 'slug')
+        fields = (
+            'tovar_link', 'name', 'chaina_link', 'opponents_link', 'slug', 'photo',)
 
 
 class SKUForm(forms.ModelForm):
@@ -15,3 +16,8 @@ class SKUForm(forms.ModelForm):
         model = SKU
 
         fields = '__all__'
+
+
+class UploadFileForm(forms.Form):
+
+    file = forms.FileField()

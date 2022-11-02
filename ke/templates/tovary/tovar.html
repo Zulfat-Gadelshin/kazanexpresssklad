@@ -4,25 +4,61 @@
 {% load static %}
 <html lang="ru"> <!-- Язык сайта - русский -->
 <head>
+    <style>
+    table {
+   border-collapse: collapse;
+   border: 3px solid grey;}
+  th, td {
+   border: 1px solid grey;
+}
+td, th:first-child {text-align: center;}
+td, th {height: 30px; vertical-align: top;}
+table {margin: 0 auto;}
 
+
+    </style>
     <title>Анализ продаж</title>
 </head>
 <body>
 <main>
     <!-- класс py-5 создает отступы сверху и снизу блока -->
     <div class="container py-5">
-        <h1> выводим продажи </h1>
+        <h1> Все товары </h1>
+        <input type="submit" атрибуты>
+        <button type="submit">Загрузить данные</button>
 
-        <ul>
-            <li>Название столбца 1</li>
+
+        
+        <table>
+            <tbody>
+            <tr>
+                <th>Название товара</th>
+                <th>Фото</th>
+                <th>Ссылка на товары в Китае</th>
+                <th>Ссылка на товары Конкурентов</th>
+                <th>Стоимость товара</th>
+            </tr>
             {% for tovar in tovary %}
+            <tr>
 
-            <li>
-                Товар:{{tovar.name}}
-            </li>
+                <td>{{tovar.name}}</td>
+                <td>{{tovar.photo}}</td>
+                <td>{{tovar.chaina_link}}</td>
+                <td>{{tovar.opponents_link}}</td>
+
+
+            </tr>
+
             {% endfor %}
+            <tr>
+                <th>Количество товара:</th>
+                <th>{{tovar.chaina_link}}</th>
 
-        </ul>
+            </tr>
+            </tbody>
+        </table>
+
+
     </div>
 </main>
 </body>

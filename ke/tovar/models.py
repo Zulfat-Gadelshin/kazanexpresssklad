@@ -7,6 +7,7 @@ class Tovar(models.Model):
     chaina_link = models.URLField(max_length=500)  # Ссылка на товар в китае
     opponents_link = models.TextField()  # Ссылка на конкурента
     slug = models.SlugField()  # название товара в системе
+    photo = models.ImageField(null=True, blank=True)  # фото товара
 
 
 class SKU(models.Model):
